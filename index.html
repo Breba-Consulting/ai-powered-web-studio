@@ -236,9 +236,21 @@
       color: var(--text);
     }
 
-    .brand-accent {
-      color: var(--primary);
-      font-weight: 800;
+    .brand-mark {
+      display: inline-block;
+      font-weight: 700;
+      background-image: linear-gradient(90deg, #8B5CF6 0%, #60A5FA 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      transition: filter 0.2s ease, opacity 0.2s ease;
+    }
+
+    .brand-mark:hover,
+    .brand-mark:focus {
+      opacity: 0.96;
+      filter: brightness(1.05);
     }
 
     .navbar-toggler {
@@ -938,9 +950,7 @@
     <header class="site-header">
       <nav class="navbar navbar-expand-lg" aria-label="Primary navigation">
         <div class="container-wide">
-          <a class="navbar-brand brand-mark" href="#home" aria-label="Breba Consulting home">
-            <span class="brand-accent">Breba</span><span>Consulting</span>
-          </a>
+          <a class="navbar-brand brand-mark" href="#home" aria-label="Breba Consulting home">Breba Consulting</a>
           <div class="navbar-collapse" id="primaryNav">
             <ul class="navbar-nav ms-auto me-lg-2 mb-0 align-items-center">
               <li class="nav-item"><a class="nav-link nav-reveal-target nav-reveal-priority nav-reveal-delay-1" href="#pricing">Pricing</a></li>
@@ -1190,9 +1200,7 @@
       <div class="container-wide">
         <div class="row footer-stack align-items-center justify-content-between">
           <div class="col-lg-6">
-            <a class="navbar-brand brand-mark" href="#home" aria-label="Breba Consulting home">
-              <span class="brand-accent">Breba</span><span>Consulting</span>
-            </a>
+            <a class="navbar-brand brand-mark" href="#home" aria-label="Breba Consulting home">Breba Consulting</a>
             <p class="footer-copy">AI-powered websites, without the vendor lock-in.</p>
           </div>
         </div>
