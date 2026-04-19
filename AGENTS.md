@@ -44,4 +44,5 @@ Technical & Navigation Constraints
 - Contact form submits to external API endpoint.  
 - Navbar contains only “Pricing” and “Let’s Go”.  
 - Desktop: navbar links/CTA initially hidden, revealed with animated focus transition when navbar reaches hero CTA vertical position, with special reveal for “Pricing” and “Let’s Go”.  
-- Mobile: navbar always shows “Pricing” and “Let’s Go”, no hamburger menu.
+- Mobile: navbar always shows “Pricing” and “Let’s Go”, no hamburger menu.  
+- Footer privacy link points to dedicated privacy policy page.
