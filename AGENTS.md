@@ -58,5 +58,5 @@ SEO & Metadata Decisions
 - Open Graph: title matches page title; description matches meta; dedicated OG image; URL uses canonical.  
 - Twitter Card: summary_large_image with same title, description, and image as Open Graph.  
 - No social/profile URLs exposed in structured data.  
-- Schema.org: type ProfessionalService; name “Breba Consulting”; description matches meta; url https://breba-consulting.com/; logo uses canonical logo asset; no public contact details in schema.  
+- Schema.org: use WebSite and Organization JSON-LD with name “Breba Consulting”, canonical URL, canonical logo asset, description matching meta, worldwide area served, topics of expertise, founder, and actions for scheduling and contacting; no public contact details.  
 - Main H1 visually preserves readable whitespace even when split across multiple spans.
