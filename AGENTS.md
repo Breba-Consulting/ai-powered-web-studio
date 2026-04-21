@@ -21,7 +21,8 @@ Visual & UX Preferences
 - Logo combines image and gradient text; mobile hides text logo on scroll, desktop keeps both; logo text fully visible.  
 - Hero CTAs full-width on small mobile.  
 - Calendly modal with minimal ancillary text.  
-- Hero section full viewport height with centered content.
+- Hero section full viewport height with centered content.  
+- Hero subheading preserved as-is.
 
 Layout & Interaction Decisions  
 - Single-page layout.  
@@ -54,9 +55,10 @@ SEO & Metadata Decisions
 - Primary domain https://breba-consulting.com/  
 - Canonical URL https://breba-consulting.com/  
 - Robots: index, follow.  
-- Meta description shared with Open Graph and Twitter.  
+- SEO title: “We design and build high-converting websites and landing pages, then equip you with the tools that let you focus on your work and not your website.”  
+- Meta description equals SEO title.  
 - Open Graph: title matches page title; description matches meta; dedicated OG image; URL uses canonical.  
 - Twitter Card: summary_large_image with same title, description, and image as Open Graph.  
 - No social/profile URLs exposed in structured data.  
-- Schema.org: use WebSite and Organization JSON-LD with name “Breba Consulting”, canonical URL, canonical logo asset, description matching meta, worldwide area served, topics of expertise, founder, and actions for scheduling and contacting; no public contact details.  
+- Schema.org: WebSite and Organization JSON-LD with name “Breba Consulting”, canonical URL, specified logo asset, description matching meta, worldwide area served, topics of expertise, founder, and actions for scheduling and contacting; no public contact details.  
 - Main H1 visually preserves readable whitespace even when split across multiple spans.
