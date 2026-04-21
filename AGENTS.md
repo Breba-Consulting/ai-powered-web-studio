@@ -27,7 +27,7 @@ Layout & Interaction Decisions
 - Single-page layout.  
 - Hero main heading visually constrained with gradient and entrance animation.  
 - Hero uses a rotating checklist element.  
-- Hero primary CTA labeled as “Get Started”; secondary as “See Pricing”.
+- Hero primary CTA labeled “Get Started”; secondary “See Pricing”.
 
 Pricing & Offering Decisions  
 - Middle value proposition emphasizes automation/workflows with optional agent references.  
@@ -46,7 +46,8 @@ Technical & Navigation Constraints
 - All primary CTAs open a Calendly modal.  
 - Calendly calendar fills modal width on all devices.  
 - Mobile phones: Calendly uses full screen height.  
-- Tablets: Calendly uses expanded, mobile-like full-screen height and space.
+- Tablets: Calendly uses expanded, mobile-like full-screen height and space.  
+- Material Symbols font loaded via shared Google Fonts URL with icon_names parameter in alphabetical order.
 
 SEO & Metadata Decisions  
 - Primary domain https://breba-consulting.com/  
