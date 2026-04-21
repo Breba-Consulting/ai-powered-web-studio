@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://breba-consulting.example/sitemap.xml
+Sitemap: https://breba-consulting.com/sitemap.xml

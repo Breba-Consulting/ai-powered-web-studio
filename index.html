@@ -3,14 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Breba Consulting | AI-Powered Websites Without Vendor Lock-In</title>
+  <title>We Build Websites for Owners Who Have a Business to Run</title>
   <meta name="description" content="Breba Consulting designs and builds high-converting websites and landing pages, then equips you with the tools that let you focus on your work and not your website.">
   <meta name="keywords" content="Breba Consulting, AI websites, AI agents, landing page consulting, no-code site updates, vendor lock-in, web design, web development">
-  <meta property="og:title" content="Breba Consulting | AI-Powered Websites Without Vendor Lock-In">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://breba-consulting.com/">
+  <meta property="og:title" content="We Build Websites for Owners Who Have a Business to Run">
   <meta property="og:description" content="Breba Consulting designs and builds high-converting websites and landing pages, then equips you with the tools that let you focus on your work and not your website.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://breba-consulting.example">
-  <meta property="og:image" content="https://breba-consulting.example/og-image.jpg">
+  <meta property="og:url" content="https://breba-consulting.com/">
+  <meta property="og:site_name" content="Breba Consulting">
+  <meta property="og:image" content="https://cdn.breba.app/yason/4983b6ae60474e8aafe4009266bb4db6/assets/breba-og-image.png">
+  <meta property="og:image:alt" content="Breba Consulting website preview on a laptop in a city office setting">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="We Build Websites for Owners Who Have a Business to Run">
+  <meta name="twitter:description" content="Breba Consulting designs and builds high-converting websites and landing pages, then equips you with the tools that let you focus on your work and not your website.">
+  <meta name="twitter:image" content="https://cdn.breba.app/yason/4983b6ae60474e8aafe4009266bb4db6/assets/breba-og-image.png">
   <meta name="theme-color" content="#05070D">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="shortcut icon" href="/favicon.ico">
@@ -38,6 +46,7 @@
       --radius: 1.25rem;
       --radius-sm: 0.875rem;
       --container: 75rem;
+      --header-height: 0px;
     }
 
     html {
@@ -349,10 +358,49 @@
     }
 
     .hero {
+      --blue-center-x: calc(100% - 2.75rem);
+      --blue-center-y: 10rem;
       position: relative;
-      padding: clamp(2rem, 7vw, 8rem) 0 clamp(4rem, 7vw, 6rem);
+      display: flex;
+      align-items: center;
+      min-height: calc(100vh - var(--header-height));
+      min-height: calc(100svh - var(--header-height));
+      padding: clamp(2rem, 5vw, 4rem) 0;
       overflow: clip;
       text-align: center;
+    }
+
+    .hero > .container-wide {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+    }
+
+    .hero-grid-layer {
+      position: absolute;
+      width: 100vw;
+      height: 100vw;
+      min-width: 36rem;
+      min-height: 36rem;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hero-grid-layer svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .hero-grid-blue {
+      z-index: 1;
+      left: var(--blue-center-x);
+      top: var(--blue-center-y);
+      transform: translate(-50%, -50%);
+    }
+
+    .hero-grid-purple {
+      display: none;
     }
 
     .hero::before,
@@ -361,7 +409,7 @@
       position: absolute;
       border-radius: 50%;
       pointer-events: none;
-      z-index: -1;
+      z-index: 4;
     }
 
     .hero::before {
@@ -815,6 +863,49 @@
       box-shadow: var(--shadow);
     }
 
+    .calendly-modal-dialog {
+      width: min(100vw - 2rem, 78rem);
+      max-width: none;
+      margin-inline: auto;
+    }
+
+    .calendly-modal-body {
+      padding: 0;
+    }
+
+    .calendly-inline-widget {
+      width: 100%;
+      min-width: 100%;
+      height: min(80vh, 43.75rem);
+    }
+
+    @media (max-width: 991.98px) {
+      .calendlyModal-open .modal {
+        padding-right: 0 !important;
+      }
+
+      .calendly-modal-dialog {
+        width: 100vw;
+        max-width: 100vw;
+        min-height: 100dvh;
+        margin: 0;
+      }
+
+      .calendly-modal-dialog .modal-content {
+        min-height: 100dvh;
+        height: 100dvh;
+        border-radius: 0;
+      }
+
+      .calendly-modal-body {
+        flex: 1 1 auto;
+      }
+
+      .calendly-inline-widget {
+        height: calc(100dvh - 4.5rem);
+      }
+    }
+
     .modal-header,
     .modal-footer {
       border-color: rgba(31, 41, 51, 1);
@@ -946,6 +1037,11 @@
     }
 
     @media (max-width: 767.98px) {
+      .hero {
+        --blue-center-x: calc(100% - 6rem);
+        --blue-center-y: 8.5rem;
+      }
+
       .hero-actions {
         flex-direction: column;
         align-items: stretch;
@@ -965,14 +1061,23 @@
 
     .hero .row {
       justify-content: center;
+      min-height: 100%;
     }
 
     .hero .col-lg-10 {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
       text-align: center;
       margin-inline: auto;
+      transform: translateY(-0.5rem);
+    }
+
+    @supports (min-height: 100dvh) {
+      .hero {
+        min-height: calc(100dvh - var(--header-height));
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -987,6 +1092,43 @@
         transition: none !important;
       }
     }
+
+    .hero-grid-blue {
+      mask-image: radial-gradient(
+        circle farthest-side at 47% 50%,
+        transparent 0%,
+        transparent 20%,
+        rgba(0,0,0,0.28) 42%,
+        rgba(0,0,0,0.04) 70%,
+        transparent 100%
+      );
+    }
+
+    @media (max-width: 1200px) {
+      .hero-grid-blue {
+        mask-image: radial-gradient(
+          circle farthest-side at 47% 50%,
+          transparent 0%,
+          transparent 28%,
+          rgba(0,0,0,0.28) 58%,
+          rgba(0,0,0,0.04) 75%,
+          transparent 100%
+        );
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-grid-blue {
+        mask-image: radial-gradient(
+          circle farthest-side at 47% 50%,
+          transparent 0%,
+          transparent 38%,
+          rgba(0,0,0,0.28) 65%,
+          rgba(0,0,0,0.04) 80%,
+          transparent 100%
+        );
+      }
+    }
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
@@ -994,6 +1136,16 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Breba Consulting",
+      "description": "Breba Consulting designs and builds high-converting websites and landing pages, then equips you with the tools that let you focus on your work and not your website.",
+      "url": "https://breba-consulting.com/",
+      "logo": "https://cdn.breba.app/yason/4983b6ae60474e8aafe4009266bb4db6/assets/breba_logo.png"
+    }
   </script>
 </head>
 <body>
@@ -1010,7 +1162,7 @@
               <li class="nav-item"><a class="nav-link nav-reveal-target nav-reveal-priority nav-reveal-delay-1" href="#pricing">Pricing</a></li>
             </ul>
             <div class="navbar-actions nav-reveal-target nav-reveal-priority nav-reveal-delay-2">
-              <button class="btn btn-primary-custom" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Let's Go</button>
+              <button class="btn btn-primary-custom" type="button" data-bs-toggle="modal" data-bs-target="#calendlyModal">Let's Go</button>
             </div>
           </div>
         </div>
@@ -1019,18 +1171,28 @@
 
     <main>
       <section class="hero" id="home">
+        <div class="hero-grid-layer hero-grid-blue" aria-hidden="true">
+          <svg width="100%" height="100%" role="presentation">
+            <defs>
+              <pattern id="heroBlueGridPatternAlt" width="96" height="96" patternUnits="userSpaceOnUse">
+                <path d="M 96 0 L 0 0 0 96" fill="none" stroke="#5f96f0" stroke-width="1.5" opacity="1"></path>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#heroBlueGridPatternAlt)" opacity="1"></rect>
+          </svg>
+        </div>
         <div class="container-wide">
           <div class="row g-4 g-lg-5 align-items-center">
             <div class="col-lg-10 col-xl-9">
-              <h1 class="hero-title"><span class="hero-title-line hero-title-line-top">Your Website</span><span class="hero-title-line hero-title-line-bottom">Our Problem</span></h1>
-              <p class="hero-copy">Breba Consulting designs and builds awesome websites and landing pages, then equips you with the tools that let you focus on your work and not your website.</p>
+              <h1 class="hero-title"><span class="hero-title-line hero-title-line-top">Your Website</span> <span class="hero-title-line hero-title-line-bottom">Our Problem</span></h1>
+              <p class="hero-copy">Breba Consulting designs and builds high-converting websites and landing pages, then equips you with the tools that let you focus on your work and not your website.</p>
               <ul class="check-list" aria-label="Key benefits">
-                <li class="is-active"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span>Launch modern, conversion-focused sites fast.</span></li>
+                <li class="is-active"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span>Launch conversion-focused sites fast.</span></li>
                 <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span>Automate like it's 2026.</span></li>
                 <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span>Own your stack with zero vendor lock-in.</span></li>
               </ul>
               <div class="d-flex flex-wrap gap-3 hero-actions" id="heroCtas">
-                <button class="btn btn-primary-custom" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Get Started</button>
+                <button class="btn btn-primary-custom" type="button" data-bs-toggle="modal" data-bs-target="#calendlyModal">Get Started</button>
                 <a class="btn btn-secondary-custom" href="#pricing">See Pricing</a>
               </div>
             </div>
@@ -1079,7 +1241,7 @@
         <div class="container-wide">
           <div class="mb-5">
             <h2 class="section-title">How It Works</h2>
-            <p class="section-subtitle">From idea to AI-powered website in three steps.</p>
+            <p class="section-subtitle">From idea to a conversion-focused website in three steps.</p>
           </div>
           <div class="row g-4">
             <div class="col-md-6 col-lg-4">
@@ -1097,7 +1259,7 @@
                   <span class="step-icon-number">02</span>
                 </div>
                 <h3>Build &amp; Automate</h3>
-                <p>We automate your workflows and hook you up with AI agents so you can make changes without developers.</p>
+                <p>We set up automation and optional AI-powered tools so you can make updates faster without chasing developers.</p>
               </article>
             </div>
             <div class="col-md-6 col-lg-4">
@@ -1106,7 +1268,7 @@
                   <span class="step-icon-number">03</span>
                 </div>
                 <h3>Launch &amp; Hand Over Control</h3>
-                <p>We go live, train your team to work with the agents, and hand over full ownership so you can scale without being tied to a single vendor.</p>
+                <p>We go live, train your team on your workflow, and hand over full ownership so you can scale without being tied to a single vendor.</p>
               </article>
             </div>
           </div>
@@ -1126,11 +1288,18 @@
             <p class="section-subtitle">Leaders who want control without complexity.</p>
           </div>
           <div class="row g-4 justify-content-center">
-            <div class="col-md-10 col-lg-8">
+            <div class="col-md-6 col-lg-5">
               <article class="testimonial-card">
                 <blockquote>“Breba set up our website with free hosting. But I was most amazed by how I can use their AI agents to change the website by just saying ‘I want...’ and now I never have to look for a developer to adjust my schedule, prices, or upload photos to the website.”</blockquote>
                 <div class="testimonial-name">Maya Bichikashvili</div>
-                <div class="testimonial-meta">Owner, <a class="testimonial-link" href="https://gudaurikidsclub.com/" target="_blank" rel="noopener noreferrer">Guaduri Kids Club</a></div>
+                <div class="testimonial-meta">Owner, <a class="testimonial-link" href="https://gudaurikidsclub.com/" target="_blank" rel="noopener noreferrer">Gudauri Kids Club</a></div>
+              </article>
+            </div>
+            <div class="col-md-6 col-lg-5">
+              <article class="testimonial-card">
+                <blockquote>“Breba Consulting brought our website online in 5 days, just in time for our marketing campaign. They gave us 3 good designs to start with the final result exceeded all our expectations.”</blockquote>
+                <div class="testimonial-name">Nino Imedia</div>
+                <div class="testimonial-meta">Chief of Marketing, <a class="testimonial-link" href="https://eurostandarttaxi.com/" target="_blank" rel="noopener noreferrer">Eurostandart Taxi</a></div>
               </article>
             </div>
           </div>
@@ -1141,7 +1310,7 @@
         <div class="container-wide">
           <div class="mb-5">
             <h2 class="section-title">Engagement Options</h2>
-            <p class="section-subtitle">Start lean or go full-scale — every plan includes AI agents.</p>
+            <p class="section-subtitle">Start lean or go full-scale — every plan is built for conversion, control, and automation.</p>
           </div>
           <div class="row g-4 align-items-stretch">
             <div class="col-md-6 col-xl-4">
@@ -1170,7 +1339,7 @@
                   <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span>Analytics and tracking setup</span></li>
                   <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span>Team onboarding session</span></li>
                 </ul>
-                <button class="btn btn-primary-custom w-100" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Book a Discovery Call</button>
+                <button class="btn btn-primary-custom w-100" type="button" data-bs-toggle="modal" data-bs-target="#calendlyModal">Book a Discovery Call</button>
               </article>
             </div>
             <div class="col-md-6 col-xl-4">
@@ -1196,7 +1365,7 @@
         <div class="container-wide">
           <div class="mb-4">
             <h2 class="section-title">FAQs</h2>
-            <p class="section-subtitle">Answers to common questions about AI-powered websites.</p>
+            <p class="section-subtitle">Answers to common questions about conversion-focused websites, automation, and ownership.</p>
           </div>
           <div class="faq-list" role="list">
             <article class="faq-item" role="listitem">
@@ -1254,7 +1423,7 @@
         <div class="row footer-stack align-items-center justify-content-between">
           <div class="col-lg-6">
             <a class="navbar-brand brand-mark" href="#home" aria-label="Breba Consulting home">Breba Consulting</a>
-            <p class="footer-copy">AI-powered websites, without the vendor lock-in.</p>
+            <p class="footer-copy">Conversion-focused websites you control, with automation built in.</p>
           </div>
         </div>
         <div class="footer-bottom d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-2">
@@ -1263,6 +1432,22 @@
         </div>
       </div>
     </footer>
+  </div>
+
+  <div class="modal fade" id="calendlyModal" tabindex="-1" aria-labelledby="calendlyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl calendly-modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h2 class="modal-title h4 mb-0" id="calendlyModalLabel">Book your call</h2>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close Calendly scheduler"></button>
+        </div>
+        <div class="modal-body calendly-modal-body">
+          <div class="calendly-inline-widget" data-url="https://calendly.com/yason-breba/yason-breba"></div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
@@ -1310,6 +1495,7 @@
     </div>
   </div>
 
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     (function () {
@@ -1322,7 +1508,14 @@
       const heroCtas = document.getElementById('heroCtas');
       const rotatingChecklist = document.querySelector('.check-list');
       const rotatingChecklistItems = rotatingChecklist ? rotatingChecklist.querySelectorAll('li') : [];
+      const calendlyModal = document.getElementById('calendlyModal');
       let rotatingChecklistIndex = 0;
+
+      const syncHeaderHeight = function () {
+        if (!siteHeader) return;
+        document.documentElement.style.setProperty('--header-height', siteHeader.offsetHeight + 'px');
+      };
+
 
       if (rotatingChecklistItems.length) {
         rotatingChecklistItems.forEach(function (item, index) {
@@ -1342,6 +1535,9 @@
         });
       }
 
+      syncHeaderHeight();
+      window.addEventListener('resize', syncHeaderHeight);
+
       if (siteHeader && heroCtas) {
         const syncNavReveal = function () {
           const headerBottom = siteHeader.getBoundingClientRect().bottom;
@@ -1352,6 +1548,16 @@
         syncNavReveal();
         window.addEventListener('scroll', syncNavReveal, { passive: true });
         window.addEventListener('resize', syncNavReveal);
+      }
+
+      if (calendlyModal) {
+        calendlyModal.addEventListener('show.bs.modal', function () {
+          document.body.classList.add('calendlyModal-open');
+        });
+
+        calendlyModal.addEventListener('hidden.bs.modal', function () {
+          document.body.classList.remove('calendlyModal-open');
+        });
       }
 
       if (!contactForm) return;
