@@ -34,6 +34,7 @@ Layout & Interaction Decisions
 Pricing & Offering Decisions  
 - Pricing includes promotional pricing vs original.  
 - Mid-tier identified as most popular.  
+- “Most popular” label slightly larger text, tighter padding, positioned closer to card’s top-right to minimize overlap with title.  
 - Top-tier uses custom pricing but visually consistent with other tiers.  
 - Buttons in comparable cards vertically aligned.
 
