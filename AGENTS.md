@@ -12,7 +12,7 @@ Website Purpose & Positioning
 
 Visual & UX Preferences  
 - Dark, modern, polished productized SaaS/agency aesthetic.  
-- Clean typography with strong hierarchy; primary typeface Inter.  
+- Clean typography with strong hierarchy; system UI sans-serif stack only.  
 - Blue and purple accents.  
 - Preference for numbered elements over icons/badges.  
 - All section headings and subheadings centered.  
@@ -20,13 +20,16 @@ Visual & UX Preferences
 - No social media icons in footer.  
 - Logo combines image and gradient text; mobile hides text logo on scroll, desktop keeps both; logo text fully visible.  
 - Hero CTAs full-width on small mobile.  
-- Calendly modal with minimal ancillary text.  
-- Hero section full viewport height with centered content.
+- Calendly modal with minimal ancillary text and visible loading state.  
+- Hero section full viewport height with centered content.  
+- Default header height 80px.
 
 Layout & Interaction Decisions  
 - Single-page layout.  
 - Hero main heading visually constrained with gradient and entrance animation.  
-- Hero includes rotating checklist element.
+- Hero includes rotating checklist element.  
+- Rotating checklist animation begins only after icon font is ready (or times out to start regardless).  
+- Hero title text and navbar logo text revealed only after relevant font loading state is confirmed.
 
 Pricing & Offering Decisions  
 - Pricing includes promotional pricing vs original.  
@@ -45,9 +48,10 @@ Technical & Navigation Constraints
 - Calendly calendar fills modal width on all devices.  
 - Mobile phones: Calendly uses full screen height.  
 - Tablets: Calendly uses expanded, mobile-like full-screen height and space.  
+- Calendly script lazy-loads after primary content without waiting for user click.  
+- Calendly event tracking keyed on `calendly.event_type_viewed`.  
 - Material Symbols font loaded via shared Google Fonts URL with icon_names parameter in alphabetical order.  
-- Inter font loading prioritized over other fonts; Inter uses font-display: swap.  
-- External CSS and font stylesheets (including Google Fonts and Material fonts) loaded in a non-blocking, performance-optimized way.  
+- CSS loading prioritized so core framework styles are render-blocking and load before fonts; fonts non-blocking.  
 - Analytics handled via Umami; Google Analytics excluded.
 
 SEO & Metadata Decisions  
@@ -58,5 +62,5 @@ SEO & Metadata Decisions
 - Open Graph: title matches page title; description matches meta; dedicated OG image; URL uses canonical.  
 - Twitter Card: summary_large_image with same title, description, and image as Open Graph.  
 - No social/profile URLs exposed in structured data.  
-- Schema.org: use WebSite and Organization JSON-LD with name “Breba Consulting”, canonical URL, canonical logo asset, description matching meta, worldwide area served, topics of expertise, founder, and actions for scheduling and contacting; no public contact details.  
+- Schema.org: WebSite and Organization JSON-LD with name “Breba Consulting”, canonical URL, canonical logo asset, description matching meta, worldwide area served, topics of expertise, founder, and actions for scheduling and contacting; no public contact details.  
 - Main H1 visually preserves readable whitespace even when split across multiple spans.

@@ -24,24 +24,16 @@
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/favicon.ico">
   <link rel="preconnect" href="https://cdn.breba.app" crossorigin>
-  <link rel="preload" href="https://cdn.breba.app/yason/4983b6ae60474e8aafe4009266bb4db6/assets/Inter-400-500-600-700-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" as="style">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap"></noscript>
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"></noscript>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0&icon_names=check_circle,expand_more,hub,key,star,target" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0&icon_names=check_circle,expand_more,hub,key,star,target"></noscript>
   <style>
-    @font-face {
-      font-family: "Inter";
-      src: url("https://cdn.breba.app/yason/4983b6ae60474e8aafe4009266bb4db6/assets/Inter-400-500-600-700-800.woff2") format("woff2");
-      font-weight: 400 800;
-      font-display: swap;
-    }
-
     :root {
       --bg: #05070D;
       --surface: #101522;
@@ -58,7 +50,7 @@
       --radius: 1.25rem;
       --radius-sm: 0.875rem;
       --container: 75rem;
-      --header-height: 0px;
+      --header-height: 80px;
     }
 
     html {
@@ -67,7 +59,7 @@
 
     body {
       margin: 0;
-      font-family: "Inter", sans-serif;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background:
         radial-gradient(circle at top right, rgba(59, 130, 246, 0.15), transparent 28%),
         radial-gradient(circle at left 20%, rgba(139, 92, 246, 0.12), transparent 24%),
@@ -276,6 +268,16 @@
       overflow: visible;
     }
 
+    .font-reveal-target {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .fonts-ready .font-reveal-target {
+      opacity: 1;
+      visibility: visible;
+    }
+
     @media (min-width: 768px) {
       .site-header.nav-ready .navbar-brand-text {
         opacity: 1;
@@ -462,19 +464,25 @@
       will-change: transform, opacity, filter;
     }
 
+    .fonts-ready .hero-title-line-top {
+      animation: heroTitlePop 0.72s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .fonts-ready .hero-title-line-bottom {
+      animation: heroTitleSlideIn 0.72s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: 0.16s;
+    }
+
     .hero-title-line-top {
       background-image: linear-gradient(135deg, #60A5FA 0%, #8B5CF6 100%);
       transform: scale(0.88) translateY(1rem);
       filter: blur(0.5rem);
-      animation: heroTitlePop 0.72s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
     .hero-title-line-bottom {
       background-image: linear-gradient(135deg, #8B5CF6 0%, #60A5FA 100%);
       transform: translateX(-2rem);
       filter: blur(0.35rem);
-      animation: heroTitleSlideIn 0.72s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      animation-delay: 0.16s;
     }
 
     @keyframes heroTitlePop {
@@ -520,6 +528,12 @@
       margin: 0 auto 1.5rem;
     }
 
+    @media (max-width: 767.98px) {
+      .hero-copy {
+        padding-inline: 0.75rem;
+      }
+    }
+
     .check-list {
       list-style: none;
       padding: 0;
@@ -528,6 +542,11 @@
       width: min(100%, 32rem);
       min-height: 1.75rem;
       position: relative;
+    }
+
+    .check-list.is-pending-icons {
+      opacity: 0;
+      pointer-events: none;
     }
 
     .check-list li {
@@ -883,6 +902,33 @@
 
     .calendly-modal-body {
       padding: 0;
+      position: relative;
+    }
+
+    .calendly-loader {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      color: var(--muted);
+      background: linear-gradient(180deg, rgba(16, 21, 34, 0.96), rgba(12, 18, 32, 0.96));
+      z-index: 1;
+    }
+
+    .breba-spinner {
+      width: 3rem;
+      height: 3rem;
+      border: 0.1875rem solid var(--border);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: breba-spin 0.7s linear infinite;
+    }
+
+    @keyframes breba-spin {
+      to { transform: rotate(360deg); }
     }
 
     .calendly-inline-widget {
@@ -1200,7 +1246,7 @@
         <div class="container-wide">
           <a class="navbar-brand" href="#home" aria-label="Breba Consulting home">
             <img class="navbar-logo" src="https://cdn.breba.app/yason/4983b6ae60474e8aafe4009266bb4db6/assets/breba_logo.png" alt="Breba Consulting logo" width="32" height="32">
-            <span class="brand-mark navbar-brand-text">Breba Consulting</span>
+            <span class="brand-mark navbar-brand-text font-reveal-target">Breba Consulting</span>
           </a>
           <div class="navbar-collapse" id="primaryNav">
             <ul class="navbar-nav ms-auto me-lg-2 mb-0 align-items-center">
@@ -1229,9 +1275,9 @@
         <div class="container-wide">
           <div class="row g-4 g-lg-5 align-items-center">
             <div class="col-lg-10 col-xl-9">
-              <h1 class="hero-title"><span class="hero-title-line hero-title-line-top">Your Website</span> <span class="hero-title-line hero-title-line-bottom">Our Problem</span></h1>
+              <h1 class="hero-title font-reveal-target"><span class="hero-title-line hero-title-line-top">Your Website</span> <span class="hero-title-line hero-title-line-bottom">Our Problem</span></h1>
               <p class="hero-copy">Breba Consulting designs and builds high-converting websites and landing pages, then equips you with the tools that let you focus on your work and not your website.</p>
-              <ul class="check-list" aria-label="Key benefits">
+              <ul class="check-list is-pending-icons" aria-label="Key benefits">
                 <li class="is-active"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span>Launch conversion-focused sites fast.</span></li>
                 <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span>Automate like it's 2026.</span></li>
                 <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span>Own your stack with zero vendor lock-in.</span></li>
@@ -1489,6 +1535,10 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close Calendly scheduler"></button>
         </div>
         <div class="modal-body calendly-modal-body">
+          <div id="calendlyLoader" class="calendly-loader" role="status" aria-live="polite">
+            <span class="breba-spinner" aria-hidden="true"></span>
+            <span>Loading scheduler…</span>
+          </div>
           <div class="calendly-inline-widget" data-url="https://calendly.com/yason-breba/yason-breba"></div>
         </div>
       </div>
@@ -1540,7 +1590,6 @@
     </div>
   </div>
 
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     (function () {
@@ -1555,23 +1604,62 @@
       const rotatingChecklistItems = rotatingChecklist ? rotatingChecklist.querySelectorAll('li') : [];
       const calendlyModal = document.getElementById('calendlyModal');
       let rotatingChecklistIndex = 0;
+      let poppinsRevealTriggered = false;
+      let checklistStarted = false;
 
-      const syncHeaderHeight = function () {
-        if (!siteHeader) return;
-        document.documentElement.style.setProperty('--header-height', siteHeader.offsetHeight + 'px');
+      const revealPoppinsContent = function () {
+        if (poppinsRevealTriggered) return;
+        poppinsRevealTriggered = true;
+        document.documentElement.classList.add('fonts-ready');
       };
 
+      const startRotatingChecklist = function () {
+        if (!rotatingChecklist || !rotatingChecklistItems.length || checklistStarted) return;
 
-      if (rotatingChecklistItems.length) {
+        checklistStarted = true;
         rotatingChecklistItems.forEach(function (item, index) {
           item.classList.toggle('is-active', index === 0);
         });
+
+        rotatingChecklist.classList.remove('is-pending-icons');
 
         window.setInterval(function () {
           rotatingChecklistItems[rotatingChecklistIndex].classList.remove('is-active');
           rotatingChecklistIndex = (rotatingChecklistIndex + 1) % rotatingChecklistItems.length;
           rotatingChecklistItems[rotatingChecklistIndex].classList.add('is-active');
         }, 5000);
+      };
+
+      if (document.fonts && document.fonts.load) {
+        Promise.race([
+          document.fonts.load('600 1em "Poppins"'),
+          new Promise(function (resolve) {
+            window.setTimeout(resolve, 2500);
+          })
+        ]).then(function () {
+          revealPoppinsContent();
+        }).catch(function () {
+          revealPoppinsContent();
+        });
+      } else {
+        revealPoppinsContent();
+      }
+
+      if (rotatingChecklistItems.length) {
+        if (document.fonts && document.fonts.load) {
+          Promise.race([
+            document.fonts.load('500 1em "Material Symbols Outlined"'),
+            new Promise(function (resolve) {
+              window.setTimeout(resolve, 2500);
+            })
+          ]).then(function () {
+            startRotatingChecklist();
+          }).catch(function () {
+            startRotatingChecklist();
+          });
+        } else {
+          startRotatingChecklist();
+        }
       }
 
       if (emailField && replyToField) {
@@ -1579,9 +1667,6 @@
           replyToField.value = emailField.value.trim();
         });
       }
-
-      syncHeaderHeight();
-      window.addEventListener('resize', syncHeaderHeight);
 
       if (siteHeader && heroCtas) {
         const syncNavReveal = function () {
@@ -1596,6 +1681,61 @@
       }
 
       if (calendlyModal) {
+        let calendlyLoaded = false;
+        let calendlyLoading = false;
+
+        const hideCalendlyLoader = function () {
+          const loader = document.getElementById('calendlyLoader');
+          if (loader) {
+            loader.hidden = true;
+          }
+        };
+
+        const showCalendlyError = function () {
+          const loader = document.getElementById('calendlyLoader');
+          if (!loader) return;
+          loader.hidden = false;
+          const message = loader.querySelector('span:last-child');
+          if (message) {
+            message.textContent = 'Failed to load scheduler. Please refresh and try again.';
+          }
+        };
+
+        window.addEventListener('message', function (event) {
+          if (event.data && event.data.event === 'calendly.event_type_viewed') {
+            hideCalendlyLoader();
+          }
+        });
+
+        const loadCalendly = function () {
+          if (calendlyLoaded || calendlyLoading) return;
+          calendlyLoading = true;
+
+          const script = document.createElement('script');
+          script.src = 'https://assets.calendly.com/assets/external/widget.js';
+          script.async = true;
+          script.onload = function () {
+            calendlyLoaded = true;
+            calendlyLoading = false;
+          };
+          script.onerror = function () {
+            calendlyLoaded = false;
+            calendlyLoading = false;
+            showCalendlyError();
+          };
+          document.head.appendChild(script);
+        };
+
+        const queueCalendlyLoad = function () {
+          if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(loadCalendly, { timeout: 2500 });
+          } else {
+            window.addEventListener('load', loadCalendly, { once: true });
+          }
+        };
+
+        queueCalendlyLoad();
+
         calendlyModal.addEventListener('show.bs.modal', function () {
           document.body.classList.add('calendlyModal-open');
         });
