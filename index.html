@@ -1280,7 +1280,7 @@
               <ul class="check-list is-pending-icons" aria-label="Key benefits">
                 <li class="is-active"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span>Launch conversion-focused sites fast.</span></li>
                 <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span>Automate like it's 2026.</span></li>
-                <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span>Own your stack with zero vendor lock-in.</span></li>
+                <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span>Own your stuff with zero vendor lock-in.</span></li>
               </ul>
               <div class="d-flex flex-wrap gap-3 hero-actions" id="heroCtas">
                 <button class="btn btn-primary-custom" type="button" data-bs-toggle="modal" data-bs-target="#calendlyModal">Get Started</button>
@@ -1557,10 +1557,11 @@
         </div>
         <div class="modal-body">
           <form id="contactForm" action="https://api.staticforms.xyz/submit" method="post" novalidate>
-            <input type="hidden" name="apiKey" value="YOUR_STATICFORMS_API_KEY">
-            <input type="hidden" name="subject" value="New lead from Breba Consulting landing page">
-            <input type="hidden" name="replyTo" id="replyToField" value="">
+            <input type="hidden" name="apiKey" value="sf_igdaeiddelb6fn4a2fl5j2n6">
+            <input type="hidden" name="subject" value="New lead from Breba Consulting website">
+            <input type="hidden" name="replyTo" value="@">
             <input type="hidden" name="redirectTo" value="">
+            <input type="text" name="honeypot" class="d-none" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="row g-3">
               <div class="col-md-6">
                 <label class="form-label" for="name">Name</label>
@@ -1597,7 +1598,6 @@
       const statusBox = document.getElementById('formStatus');
       const submitButton = document.getElementById('submitButton');
       const emailField = document.getElementById('email');
-      const replyToField = document.getElementById('replyToField');
       const siteHeader = document.querySelector('.site-header');
       const heroCtas = document.getElementById('heroCtas');
       const rotatingChecklist = document.querySelector('.check-list');
@@ -1660,12 +1660,6 @@
         } else {
           startRotatingChecklist();
         }
-      }
-
-      if (emailField && replyToField) {
-        emailField.addEventListener('input', function () {
-          replyToField.value = emailField.value.trim();
-        });
       }
 
       if (siteHeader && heroCtas) {
@@ -1761,7 +1755,6 @@
         submitButton.textContent = 'Sending...';
 
         const formData = new FormData(contactForm);
-        formData.set('replyTo', emailField.value.trim());
 
         try {
           const response = await fetch(contactForm.action, {

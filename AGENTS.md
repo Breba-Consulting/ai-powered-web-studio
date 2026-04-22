@@ -39,7 +39,11 @@ Pricing & Offering Decisions
 
 Technical & Navigation Constraints  
 - Single HTML file including markup, styles, and scripts.  
-- Contact form submits to external API endpoint.  
+- Contact form uses Staticforms with endpoint https://api.staticforms.xyz/submit.  
+- Contact form includes apiKey `sf_igdaeiddelb6fn4a2fl5j2n6`.  
+- Contact form subject: “New lead from Breba Consulting website”.  
+- Contact form replyTo set to “@”.  
+- Contact form includes honeypot field.  
 - Navbar contains only “Pricing” and “Let’s Go”.  
 - Desktop: navbar links/CTA initially hidden and revealed via animated focus transition aligned with hero CTAs, with distinct reveals.  
 - Mobile: navbar always shows “Pricing” and “Let’s Go”; no hamburger.  
