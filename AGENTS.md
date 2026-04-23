@@ -21,15 +21,17 @@ Visual & UX Preferences
 - Preference for numbered elements over icons/badges.  
 - All section headings and subheadings centered.  
 - Navbar primary CTA visually restrained on mobile.  
+- Navbar brand text larger on mobile (1.25rem).  
 - No social media icons in footer.  
 - Logo combines image and gradient text; logo text always fully readable; on mobile text hides on scroll while image remains, desktop keeps both.  
-- Hero CTAs full-width on small mobile, with consistent margins and generous, consistent text padding.  
+- Hero CTAs full-width on small mobile, with consistent margins and 1.5rem text padding.  
 - Calendly modal minimal and focused, with clear loading feedback.  
 - Hero section full viewport height with centered content.  
 - Default header height 80px.  
 - Preference for aesthetically pleasing line wrapping, avoiding single-word lines.  
 - Key CTA labels remain on a single line and not compressed.  
-- Benefits callout text visually simple, without heavy emphasis.
+- Benefits callout text visually simple, without heavy emphasis.  
+- Promotional callouts visually consistent with the “How it works” long card style.
 
 Layout & Interaction Decisions  
 - Single-page layout.  
