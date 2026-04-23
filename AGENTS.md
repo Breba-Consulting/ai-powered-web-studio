@@ -1,71 +1,72 @@
 Background  
 - Consulting for easily updatable, conversion-focused websites/landing pages.  
-- Emphasis on client control, no vendor lock-in, optional AI/agents/tools.
+- Emphasis on client control, full asset ownership, no vendor lock-in, optional AI/agents/tools.  
+- Sites operate without ongoing consultant involvement and support handoff to other developers or AI tools.  
+- Websites positioned as tools that reduce ongoing effort for owners.
 
 Website Purpose & Positioning  
-- Marketing/lead-generation for automated, easily updatable sites and workflows.  
-- Focus on automation, workflows, conversions, and analytics.  
+- Marketing/lead-generation focus for automated, easily updatable sites and workflows.  
+- Emphasis on automation, workflows, conversions, analytics, and SEO performance.  
 - Messaging centered on customer problems and outcomes.  
 - Agents/tools positioned as optional enablers; core AI agent for content updates.  
-- Fast delivery timelines.  
-- Future-facing automation positioning.
+- Services include AI agent integration, LLM recommendation strategy, and SEO.  
+- Assumption that LLM-sourced leads are higher quality.  
+- Fast delivery timelines and future-facing automation positioning.  
+- Targeting service businesses (e.g., spa, landscaping, limo).
 
 Visual & UX Preferences  
 - Dark, modern, polished productized SaaS/agency aesthetic.  
-- Clean typography with strong hierarchy; system UI sans-serif stack only.  
+- Clean typography with strong hierarchy; system UI sans-serif only.  
 - Blue and purple accents.  
 - Preference for numbered elements over icons/badges.  
 - All section headings and subheadings centered.  
 - Navbar primary CTA visually restrained on mobile.  
 - No social media icons in footer.  
-- Logo combines image and gradient text; mobile hides text logo on scroll, desktop keeps both; logo text fully visible.  
-- Hero CTAs full-width on small mobile.  
-- Calendly modal with minimal ancillary text and visible loading state.  
+- Logo combines image and gradient text; logo text always fully readable; on mobile text hides on scroll while image remains, desktop keeps both.  
+- Hero CTAs full-width on small mobile, with consistent margins and generous, consistent text padding.  
+- Calendly modal minimal and focused, with clear loading feedback.  
 - Hero section full viewport height with centered content.  
-- Default header height 80px.
+- Default header height 80px.  
+- Preference for aesthetically pleasing line wrapping, avoiding single-word lines.  
+- Key CTA labels remain on a single line and not compressed.  
+- Benefits callout text visually simple, without heavy emphasis.
 
 Layout & Interaction Decisions  
 - Single-page layout.  
 - Hero main heading visually constrained with gradient and entrance animation.  
 - Hero includes rotating checklist element.  
-- Rotating checklist animation begins only after icon font is ready (or times out to start regardless).  
-- Hero title text and navbar logo text revealed only after relevant font loading state is confirmed.
+- Rotating checklist animation coordinated with icon font readiness (or reasonable timeout).  
+- Hero title text and navbar logo text revealed only after font loading is confirmed.
 
 Pricing & Offering Decisions  
-- Pricing includes promotional pricing vs original.  
-- Mid-tier identified as most popular.  
-- “Most popular” label slightly larger text, tighter padding, positioned closer to card’s top-right to minimize overlap with title.  
-- Top-tier uses custom pricing but visually consistent with other tiers.  
-- Buttons in comparable cards vertically aligned.
+- Pricing shows promotional vs original amounts.  
+- Entry-level professional website offering at a defined price point with contact capability.  
+- Mid-tier identified and visually treated as most popular.  
+- “Most popular” label visually emphasized but not overwhelming and positioned to avoid title overlap.  
+- Top-tier uses custom pricing but remains visually consistent.  
+- Buttons across comparable pricing cards vertically aligned.
 
 Technical & Navigation Constraints  
-- Single HTML file including markup, styles, and scripts.  
-- Contact form uses Staticforms with endpoint https://api.staticforms.xyz/submit.  
-- Contact form includes apiKey `sf_igdaeiddelb6fn4a2fl5j2n6`.  
-- Contact form subject: “New lead from Breba Consulting website”.  
-- Contact form replyTo set to “@”.  
-- Contact form includes honeypot field.  
+- Single HTML file containing markup, styles, and scripts.  
+- Contact handled via third-party form service with spam protection.  
 - Navbar contains only “Pricing” and “Let’s Go”.  
-- Desktop: navbar links/CTA initially hidden and revealed via animated focus transition aligned with hero CTAs, with distinct reveals.  
-- Mobile: navbar always shows “Pricing” and “Let’s Go”; no hamburger.  
-- Footer privacy link uses relative path.  
+- Desktop: navbar links/CTA initially hidden and revealed with animated focus transition aligned to hero CTA reveals.  
+- Mobile: navbar always shows “Pricing” and “Let’s Go”; no hamburger menu.  
+- Footer includes privacy link via relative path and credits Breba as maker, highlighting breba.app as build tool.  
 - All primary CTAs open a Calendly modal.  
-- Calendly calendar fills modal width on all devices.  
-- Mobile phones: Calendly uses full screen height.  
-- Tablets: Calendly uses expanded, mobile-like full-screen height and space.  
-- Calendly script lazy-loads after primary content without waiting for user click.  
-- Calendly event tracking keyed on `calendly.event_type_viewed`.  
-- Material Symbols font loaded via shared Google Fonts URL with icon_names parameter in alphabetical order.  
-- CSS loading prioritized so core framework styles are render-blocking and load before fonts; fonts non-blocking.  
-- Analytics handled via Umami; Google Analytics excluded.
+- Calendly calendar fills modal width; mobile and tablet views use effectively full-screen height.  
+- Calendly script loaded lazily after primary content.  
+- Calendly event tracking based on event-type views.  
+- Icon font loaded via shared font resource with curated icon set.  
+- CSS loading prioritized so core styles are render-blocking; fonts load non-blocking.  
+- Analytics via Umami; Google Analytics excluded.
 
 SEO & Metadata Decisions  
-- Primary domain https://breba-consulting.com/  
-- Canonical URL https://breba-consulting.com/  
+- Primary domain and canonical URL: https://breba-consulting.com/  
 - Robots: index, follow.  
-- Meta description shared with Open Graph and Twitter.  
+- Meta description shared across standard meta, Open Graph, and Twitter.  
 - Open Graph: title matches page title; description matches meta; dedicated OG image; URL uses canonical.  
 - Twitter Card: summary_large_image with same title, description, and image as Open Graph.  
-- No social/profile URLs exposed in structured data.  
-- Schema.org: WebSite and Organization JSON-LD with name “Breba Consulting”, canonical URL, canonical logo asset, description matching meta, worldwide area served, topics of expertise, founder, and actions for scheduling and contacting; no public contact details.  
-- Main H1 visually preserves readable whitespace even when split across multiple spans.
+- No social/profile URLs in structured data.  
+- Schema.org JSON-LD for WebSite and Organization with “Breba Consulting”, canonical URL and logo, description matching meta, worldwide area served, topics of expertise, founder, and schedule/contact actions; no public contact details.  
+- Main H1 maintains readable whitespace even when visually split.

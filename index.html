@@ -530,7 +530,7 @@
 
     @media (max-width: 767.98px) {
       .hero-copy {
-        padding-inline: 0.75rem;
+        padding-inline: 1.5rem;
       }
     }
 
@@ -723,6 +723,23 @@
       margin-top: 2rem;
     }
 
+    .benefits-callout {
+      margin-top: 1.5rem;
+    }
+
+    .benefits-callout > :first-child {
+      max-width: 60ch;
+      line-height: 1.45;
+      text-wrap: pretty;
+    }
+
+    .benefits-callout .btn {
+      white-space: nowrap;
+      min-width: fit-content;
+      flex-shrink: 0;
+      padding-inline: 1.25rem;
+    }
+
     .testimonial-card blockquote {
       font-size: 1.05rem;
       margin-bottom: 1.25rem;
@@ -877,6 +894,33 @@
       margin-bottom: 0;
     }
 
+    .footer-meta {
+      margin-top: 0.875rem;
+      padding-top: 0.875rem;
+      border-top: 1px solid rgba(31, 41, 51, 0.9);
+      color: var(--muted);
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-meta-link {
+      color: var(--text);
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: rgba(96, 165, 250, 0.45);
+      text-underline-offset: 0.16rem;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .footer-meta-link:hover,
+    .footer-meta-link:focus {
+      color: #9CC2FF;
+      text-decoration-color: currentColor;
+      opacity: 1;
+    }
 
     .footer-bottom {
       margin-top: 1.5rem;
@@ -1108,8 +1152,7 @@
       }
 
       .hero-actions .btn {
-        display: block;
-        width: 100%;
+        margin-inline: 1.5rem;
       }
 
       .footer-stack {
@@ -1311,8 +1354,8 @@
                 <div class="feature-icon">
                   <span class="material-symbols-outlined" aria-hidden="true">hub</span>
                 </div>
-                <h3>Automated Workflows</h3>
-                <p>We set up the essential workflows behind your website so leads, tracking, and follow-up run smoothly.</p>
+                <h3>Simplify Your Life</h3>
+                <p>Your website is a tool and not a chore. We set up automation and make sure you can focus on your business more than ever before.</p>
               </article>
             </div>
             <div class="col-md-6 col-lg-4">
@@ -1321,9 +1364,42 @@
                   <span class="material-symbols-outlined" aria-hidden="true">key</span>
                 </div>
                 <h3>You Stay in Control</h3>
-                <p>You fully own your assets and can onboard additional agents or developers at any time with zero vendor lock-in.</p>
+                <p>You fully own all the things and the website runs without our involvement. We even make it easy to onboard other developers or make changes using your favorite AI chatbot.</p>
               </article>
             </div>
+            <div class="col-md-6 col-lg-4">
+              <article class="feature-card">
+                <div class="feature-icon">
+                  <span class="material-symbols-outlined" aria-hidden="true">star</span>
+                </div>
+                <h3>AI Agent Integration</h3>
+                <p>We hook you up with AI agents that can make changes to the website easy. You will be able to update your pricing, upload pictures, and modify content by simply sending a chat message.</p>
+              </article>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <article class="feature-card">
+                <div class="feature-icon">
+                  <span class="material-symbols-outlined" aria-hidden="true">target</span>
+                </div>
+                <h3>ChatGPT Recommendations</h3>
+                <p>We will come up with a way to get your business recommended by ChatGPT and other LLMs. Given that leads from ChatGPT are higher quality, you don't want to miss out on that.</p>
+              </article>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <article class="feature-card">
+                <div class="feature-icon">
+                  <span class="material-symbols-outlined" aria-hidden="true">check_circle</span>
+                </div>
+                <h3>Search Engine Optimization</h3>
+                <p>We will get your website ranked by search engines as high as possible. Our sites rank in the top 1% of websites and depending on your competition, we will figure out a way to get you to the top.</p>
+              </article>
+            </div>
+          </div>
+          <div class="callout-box benefits-callout d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+            <div>
+              Own a spa, landscaping business, or limo service? Get a professional website with pricing and a contact form for just $950.
+            </div>
+            <button class="btn btn-secondary-custom" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Talk to us</button>
           </div>
         </div>
       </section>
@@ -1388,7 +1464,7 @@
             </div>
             <div class="col-md-6 col-lg-5">
               <article class="testimonial-card">
-                <blockquote>“Breba Consulting brought our website online in 5 days, just in time for our marketing campaign. They gave us 3 good designs to start with the final result exceeded all our expectations.”</blockquote>
+                <blockquote>“Breba Consulting brought our website online in 5 days, just in time for our marketing campaign. They gave us 3 good designs to start with and the final result exceeded all our expectations.”</blockquote>
                 <div class="testimonial-name">Nino Imedia</div>
                 <div class="testimonial-meta">Chief of Marketing, <a class="testimonial-link" href="https://eurostandarttaxi.com/" target="_blank" rel="noopener noreferrer">Eurostandart Taxi</a></div>
               </article>
@@ -1515,6 +1591,7 @@
           <div class="col-lg-6">
             <a class="navbar-brand brand-mark" href="#home" aria-label="Breba Consulting home">Breba Consulting</a>
             <p class="footer-copy">Conversion-focused websites you control, with automation built in.</p>
+            <p class="footer-meta">Made by Breba. Built with <a class="footer-meta-link" href="https://breba.app" target="_blank" rel="noopener noreferrer">Breba.app</a></p>
           </div>
         </div>
         <div class="footer-bottom d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-2">
