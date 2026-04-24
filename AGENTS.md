@@ -6,13 +6,14 @@ Background
 
 Website Purpose & Positioning  
 - Marketing/lead-generation focus for automated, easily updatable sites and workflows.  
-- Emphasis on automation, workflows, conversions, analytics, and SEO performance.  
+- Emphasis on automation, workflows, conversions, analytics, SEO performance, and strong search rankings.  
 - Messaging centered on customer problems and outcomes.  
-- Agents/tools positioned as optional enablers; core AI agent for content updates.  
+- Agents/tools positioned as optional enablers; easy content updates via chat.  
 - Services include AI agent integration, LLM recommendation strategy, and SEO.  
 - Assumption that LLM-sourced leads are higher quality.  
 - Fast delivery timelines and future-facing automation positioning.  
-- Targeting service businesses (e.g., spa, landscaping, limo).
+- Targeting service businesses (e.g., spa, landscaping, limo).  
+- Hero messaging emphasizes $0 maintenance cost.
 
 Visual & UX Preferences  
 - Dark, modern, polished productized SaaS/agency aesthetic.  
@@ -31,7 +32,8 @@ Visual & UX Preferences
 - Preference for aesthetically pleasing line wrapping, avoiding single-word lines.  
 - Key CTA labels remain on a single line and not compressed.  
 - Benefits callout text visually simple, without heavy emphasis.  
-- Promotional callouts visually consistent with the “How it works” long card style.
+- Promotional callouts visually consistent with the “How it works” long card style.  
+- Key promotional CTA copy: “Claim This Offer”.
 
 Layout & Interaction Decisions  
 - Single-page layout.  
@@ -46,7 +48,8 @@ Pricing & Offering Decisions
 - Mid-tier identified and visually treated as most popular.  
 - “Most popular” label visually emphasized but not overwhelming and positioned to avoid title overlap.  
 - Top-tier uses custom pricing but remains visually consistent.  
-- Buttons across comparable pricing cards vertically aligned.
+- Buttons across comparable pricing cards vertically aligned.  
+- Free hosting included.
 
 Technical & Navigation Constraints  
 - Single HTML file containing markup, styles, and scripts.  
